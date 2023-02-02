@@ -1,6 +1,6 @@
 # Create TODO App with ReactJs and Typescript Exercise
 
-This exercise is based on the FreeCodeCamp's tutorial [How to Code Your React App with TypeScript](https://www.freecodecamp.org/news/how-to-code-your-react-app-with-typescript/) - YouTube video: [React & TypeScript - Course for Beginners](https://youtu.be/FJDVKeh7RJI). At all this is my first touch with Typescript.
+This exercise is based on the FreeCodeCamp's tutorial [How to Code Your React App with TypeScript](https://www.freecodecamp.org/news/how-to-code-your-react-app-with-typescript/) - YouTube video: [React & TypeScript - Course for Beginners](https://youtu.be/FJDVKeh7RJI). At all this is my first touch with TypeScript.
 
 ## References
 
@@ -63,5 +63,9 @@ git branch -M master
 git remote add origin git@github.com:metalevel-tech/exc-ts-react-todo-app.git
 git push -u origin master
 ```
+
+### Automation with GitHub Actions
+
+- [Deploy to GitHub Pages and Automate with GitHub Actions](https://github.com/metalevel-tech/exc-js-react-tic-tac-toe#deploy-to-github-pages-with-github-actions)
 
 </details>
