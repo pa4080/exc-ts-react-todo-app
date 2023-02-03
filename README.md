@@ -5,7 +5,12 @@ This exercise is based on the FreeCodeCamp's tutorial [How to Code Your React Ap
 ## References
 
 - TypeScript: [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) | [Basic Types (deprecated version)](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+
 - [`UseHooks-TS`](https://usehooks-ts.com/) a React hooks library, ready to use, written in typescript.
+
+- Drag and drop: [React Beautiful DnD](https://react-beautiful-dnd.netlify.app/?path=/story/single-vertical-list--basic).
+  - Note, this library will not be maintained in the feature, so probably [React DnD](https://react-dnd.github.io/react-dnd/about) will be better choice for the future projects.
+  - Or just use [Hello Pangea DnD](https://github.com/hello-pangea/dnd) which is a maintained fork of React Beautiful DnD. [SO Ref.](https://stackoverflow.com/a/74260444/6543935)
 
 ## Setup the Project
 
@@ -44,6 +49,19 @@ npm i @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
 npm i @headlessui/react
 npm i react-icons
 npm i @heroicons/react
+```
+
+<s>
+
+```bash
+npm i react-beautiful-dnd
+npm i @types/react-beautiful-dnd
+```
+
+</s>
+
+```bash
+npm i @hello-pangea/dnd
 ```
 
 **References:**
