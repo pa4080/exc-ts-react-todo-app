@@ -59,7 +59,11 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
   return (
     <form
       onSubmit={(ev) => handleEdit(ev, todo.id)}
-      className="todos__single text-black px-4 pb-4 pt-5 rounded-md bg-zinc-200 hover:bg-orange-300"
+      className={`transition-all duration-150 flex text-zinc-800 px-4 pb-4 pt-5 rounded-md  ${
+        edit
+          ? "bg-orange-500 hover:bg-orange-600"
+          : "bg-zinc-200 hover:bg-orange-300"
+      }`}
     >
       {
         /**
@@ -70,13 +74,13 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
           <input
             ref={inputRef}
             type="text"
-            className="flex-1 w-0 inline focus:outline-none text-left text-lg text-zinc-900 -ml-1 pl-1 rounded-md"
+            className="flex-1 w-0 focus:outline-none text-left text-lg text-zinc-900 -ml-1 pl-1 rounded-md"
             value={editTodo}
             onChange={(ev) => setEditTodo(ev.target.value)}
           />
         ) : (
           <span
-            className={`flex-1 w-0 overflow-hidden focus:outline-none text-left text-lg ${
+            className={`flex-1 w-0 overflow-hidden  text-left text-lg ${
               todo.isDone ? "line-through text-zinc-500" : "text-zinc-800"
             }`}
           >
@@ -85,15 +89,24 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
         )
       }
 
-      <span className="icon" onClick={(ev) => handleEdit(ev, todo.id)}>
+      <div
+        className="text-2xl active:text-orange-400 hover:text-orange-800 cursor-pointer ml-2"
+        onClick={(ev) => handleEdit(ev, todo.id)}
+      >
         <Edit />
-      </span>
-      <span className="icon" onClick={() => handleDelete(todo.id)}>
+      </div>
+      <div
+        className="text-2xl active:text-orange-400 hover:text-orange-800 cursor-pointer ml-1"
+        onClick={() => handleDelete(todo.id)}
+      >
         <Delete />
-      </span>
-      <span className="icon" onClick={() => handleDone(todo.id)}>
+      </div>
+      <div
+        className="text-2xl active:text-orange-400 hover:text-orange-800 cursor-pointer ml-1"
+        onClick={() => handleDone(todo.id)}
+      >
         <Done />
-      </span>
+      </div>
     </form>
   );
 };

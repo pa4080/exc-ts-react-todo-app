@@ -23,9 +23,6 @@ const App: React.FC = (props: Props) => {
   const [todos, setTodos] = useState<Todo[]>(todosStoredValue);
 
   useEffect(() => {
-    if (todos.length) {
-      console.log(todos);
-    }
     localStorage.setItem("TODOS_LIST", JSON.stringify(todos));
   }, [todos]);
 
@@ -46,8 +43,13 @@ const App: React.FC = (props: Props) => {
   };
 
   return (
-    <div className="App">
-      <span className="heading">Tasks</span>
+    <div
+      className="w-full px-14 py-12 select-none
+        flex flex-col justify-center items-center"
+    >
+      <span className="heading uppercase font-bold tracking-wider text-zinc-100 text-4xl md:text-5xl mt-6 mb-2 z-10">
+        Tasks
+      </span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

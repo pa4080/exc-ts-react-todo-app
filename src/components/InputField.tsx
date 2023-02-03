@@ -13,7 +13,7 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
 
   return (
     <form
-      className="input text-gray-700"
+      className="text-gray-700 my-12 w-full relative flex items-center"
       onSubmit={(ev) => {
         handleAdd(ev);
         inputRef.current?.blur();
@@ -23,16 +23,19 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
         ref={inputRef}
         type="input"
         placeholder="Enter a task"
-        className={`input__box px-4 pb-4 pt-5 rounded-lg ${
-          todo ? "selected" : ""
-        }`}
+        className={`input-field
+          px-4 pb-4 pt-5 rounded-lg w-full text-xl transition-all duration-150 bg-zinc-50
+          ${todo ? "selected" : ""}`}
         value={todo}
         onChange={(e) => {
           setTodo(e.target.value);
         }}
       />
       <button
-        className="input__submit rounded-r-lg bg-zinc-600 text-gray-200 hover:bg-zinc-500 active:bg-zinc-700"
+        className="button-add
+          rounded-r-lg bg-zinc-600 text-zinc-200 hover:bg-zinc-500 active:bg-zinc-700
+          absolute h-full px-7 right-0 border-none
+          text-2xl font-medium transition-all duration-150"
         type="submit"
       >
         ADD
