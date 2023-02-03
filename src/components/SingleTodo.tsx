@@ -54,7 +54,7 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos, index }) => {
 
   return (
     <Draggable draggableId={todo.id.toString()} index={index}>
-      {(provider) => (
+      {(provider, snapshot) => (
         <form
           {...provider.draggableProps}
           {...provider.dragHandleProps}
@@ -62,7 +62,7 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos, index }) => {
           onSubmit={(ev) => handleEdit(ev, todo.id)}
           className={`h-fit transition-all duration-150 mt-4
             flex text-zinc-800 px-4 pb-4 pt-5 rounded-md ${
-              edit
+              edit || snapshot.isDragging
                 ? "bg-orange-500 hover:bg-orange-600"
                 : "bg-zinc-200 hover:bg-orange-300"
             }`}

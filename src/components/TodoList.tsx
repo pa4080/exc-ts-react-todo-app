@@ -17,20 +17,24 @@ const TodoList: React.FC<Props> = ({
   setCompletedTodos
 }) => {
   return (
-    <div className="grid gap-12 grid-cols-1 md:grid-cols-2 w-full transition-height duration-1000 ease-in-out">
+    <div
+      className="grid gap-12 grid-cols-1 md:grid-cols-2
+        w-full transition-height duration-1000 ease-in-out"
+    >
       <Droppable droppableId="ACTIVE">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="flex flex-col flex-1
-              bg-zinc-700 empty:bg-transparent
-              px-6 py-6 rounded-lg w-full
-              "
+            className={`flex flex-col flex-1
+              empty:bg-transparent
+              px-6 py-6 rounded-lg w-full ${
+                snapshot.isDraggingOver
+                  ? "bg-orange-300 text-zinc-700"
+                  : "bg-zinc-700 text-zinc-200"
+              }`}
           >
-            <span className="text-zinc-200 text-2xl mb-2 text-center">
-              Active Tasks
-            </span>
+            <span className="text-2xl mb-2 text-center">Active Tasks</span>
             {todos.map((todo, index) => (
               <SingleTodo
                 index={index}
@@ -45,17 +49,19 @@ const TodoList: React.FC<Props> = ({
         )}
       </Droppable>
       <Droppable droppableId="COMPLETED">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="flex flex-col flex-1
+            className={`flex flex-col flex-1
               bg-zinc-500 empty:bg-transparent
-              px-6 py-6 rounded-lg w-full"
+              px-6 py-6 rounded-lg w-full ${
+                snapshot.isDraggingOver
+                  ? "bg-orange-400 text-zinc-700"
+                  : "bg-zinc-700 text-zinc-200"
+              }`}
           >
-            <span className="text-zinc-200 text-2xl mb-2 text-center">
-              Completed Tasks
-            </span>
+            <span className="text-2xl mb-2 text-center">Completed Tasks</span>
             {completedTodos.map((todo, index) => (
               <SingleTodo
                 index={index}
