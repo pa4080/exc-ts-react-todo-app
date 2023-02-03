@@ -12,6 +12,15 @@ This exercise is based on the FreeCodeCamp's tutorial [How to Code Your React Ap
   - Note, this library will not be maintained in the feature, so probably [React DnD](https://react-dnd.github.io/react-dnd/about) will be better choice for the future projects.
   - Or just use [Hello Pangea DnD](https://github.com/hello-pangea/dnd) which is a maintained fork of React Beautiful DnD. [SO Ref.](https://stackoverflow.com/a/74260444/6543935)
 
+## TODO Notes :)
+
+- [ ] Move the todos from left to right when mark them as done.
+- [ ] Move the todos from right to left when edit them them.
+- [ ] Implement useReducer Hook with Typescript:
+- [React & TypeScript - Course for Beginners [1:03:23]](https://youtu.be/FJDVKeh7RJI?t=3803)
+- [React Shopping Cart Tutorial | Context API with useReducer Hook in React JS](https://youtu.be/HptuMAUaNGk)
+- [React Context & Hooks Tutorial #19 - Reducers, Actions & State](https://youtu.be/uXWycyeTeCs)
+
 ## Setup the Project
 
 <details>
