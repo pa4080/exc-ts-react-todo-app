@@ -4,7 +4,8 @@ This exercise is based on the FreeCodeCamp's tutorial [How to Code Your React Ap
 
 ## References
 
-- TypeScript: [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) | [Basic Types (deprecated version)](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- TypeScript: [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) | [Basic Types (deprecated version)](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+- [`UseHooks-TS`](https://usehooks-ts.com/) a React hooks library, ready to use, written in typescript.
 
 ## Setup the Project
 

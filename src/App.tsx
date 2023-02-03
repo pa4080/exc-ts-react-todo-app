@@ -1,30 +1,24 @@
 import React, { useEffect, useState } from "react";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
+import { getLocalStorage, setLocalStorage } from "./helpers/local-storage";
 import { Todo } from "./model";
 
 type Props = {};
 
-// Ref.: https://usehooks-ts.com/react-hook/use-local-storage
-const todosStoredValue: Todo[] = ((storageKey: string, initValue: Todo[]) => {
-  if (typeof window === "undefined") return initValue;
-
-  try {
-    const item = window.localStorage.getItem(storageKey);
-    return item ? (JSON.parse(item) as Todo[]) : initValue;
-  } catch (error) {
-    console.warn(`Error reading localStorage key "${storageKey}":`, error);
-    return initValue;
-  }
-})("TODOS_LIST", []);
-
 const App: React.FC = (props: Props) => {
   const [todo, setTodo] = useState<string>("");
-  const [todos, setTodos] = useState<Todo[]>(todosStoredValue);
+  const [todos, setTodos] = useState<Todo[]>(
+    getLocalStorage("TODOS_LIST_ACTIVE", [])
+  );
+  const [completedTodos, setCompletedTodos] = useState<Todo[]>(
+    getLocalStorage("TODOS_LIST_COMPLETED", [])
+  );
 
   useEffect(() => {
-    localStorage.setItem("TODOS_LIST", JSON.stringify(todos));
-  }, [todos]);
+    setLocalStorage("TODOS_LIST_ACTIVE", todos);
+    setLocalStorage("TODOS_LIST_COMPLETED", completedTodos);
+  }, [todos, completedTodos]);
 
   const handleAdd = (ev: React.FormEvent) => {
     ev.preventDefault();

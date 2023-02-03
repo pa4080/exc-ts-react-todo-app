@@ -26,7 +26,6 @@ html {
 body {
   margin: 0;
   display: flex;
-  place-items: top center;
 
   flex-direction: column;
   align-items: center;

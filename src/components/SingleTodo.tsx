@@ -84,7 +84,8 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }) => {
               todo.isDone ? "line-through text-zinc-500" : "text-zinc-800"
             }`}
           >
-            {editTodo}
+            {todo.todo}
+            {/* Always use the value from the central state in the view mode */}
           </span>
         )
       }
